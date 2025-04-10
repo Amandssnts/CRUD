@@ -1,0 +1,9 @@
+CREATE DATABASE cadastrodeclientes;
+
+CREATE TABLE cadastro(
+    codigo INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nomecompleto VARCHAR (100) NOT NULL,
+    nomesocial VARCHAR (100),
+    email VARCHAR (100) NOT NULL,
+    cpf VARCHAR(20) NOT NULL
+);
