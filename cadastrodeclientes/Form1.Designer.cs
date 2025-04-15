@@ -46,6 +46,7 @@ namespace cadastrodeclientes
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnNovoCliente = new System.Windows.Forms.Button();
             this.panelTopo.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tbControlCadatro.SuspendLayout();
@@ -194,10 +195,12 @@ namespace cadastrodeclientes
             // 
             this.lstCliente.HideSelection = false;
             this.lstCliente.Location = new System.Drawing.Point(40, 77);
+            this.lstCliente.MultiSelect = false;
             this.lstCliente.Name = "lstCliente";
             this.lstCliente.Size = new System.Drawing.Size(693, 157);
             this.lstCliente.TabIndex = 2;
             this.lstCliente.UseCompatibleStateImageBehavior = false;
+            this.lstCliente.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lstCliente_ItemSelectionChanged);
             // 
             // btnBuscar
             // 
@@ -225,19 +228,39 @@ namespace cadastrodeclientes
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalvar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(654, 432);
+            this.btnSalvar.Location = new System.Drawing.Point(700, 432);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(116, 42);
+            this.btnSalvar.Size = new System.Drawing.Size(134, 45);
             this.btnSalvar.TabIndex = 2;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnNovoCliente
+            // 
+            this.btnNovoCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNovoCliente.AutoSize = true;
+            this.btnNovoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnNovoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNovoCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoCliente.ForeColor = System.Drawing.Color.White;
+            this.btnNovoCliente.Image = global::cadastrodeclientes.Properties.Resources.cliente;
+            this.btnNovoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovoCliente.Location = new System.Drawing.Point(532, 432);
+            this.btnNovoCliente.Name = "btnNovoCliente";
+            this.btnNovoCliente.Size = new System.Drawing.Size(134, 45);
+            this.btnNovoCliente.TabIndex = 3;
+            this.btnNovoCliente.Text = "Novo Cliente";
+            this.btnNovoCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNovoCliente.UseVisualStyleBackColor = false;
+            this.btnNovoCliente.Click += new System.EventHandler(this.btnNovoCliente_Click);
             // 
             // frmCadastrodeClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 500);
+            this.Controls.Add(this.btnNovoCliente);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panelTopo);
@@ -252,6 +275,7 @@ namespace cadastrodeclientes
             this.tbConsulta.ResumeLayout(false);
             this.tbConsulta.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -274,6 +298,7 @@ namespace cadastrodeclientes
         private System.Windows.Forms.ListView lstCliente;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnNovoCliente;
     }
 }
 
